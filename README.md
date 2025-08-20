@@ -1,69 +1,74 @@
-# React + TypeScript + Vite
+# Projeto Feed (TypeScript)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto Feed é uma aplicação web construída em **React ^19.1.1 + Vite + TypeScript ~5.8.3**, que simula um feed de posts, com perfil, comentários e likes.
 
-Currently, two official plugins are available:
+[![Screenshot do Projeto](public/imageProjeto.png)](https://projetofeedts.hallanchristian.com.br)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Visão Geral
 
-## Expanding the ESLint configuration
+O Projeto Feed é uma aplicação moderna e responsiva que exibe posts com informações de autor, avatar, cargo e conteúdo.  
+A interface conta com **estilização via CSS Modules**, datas formatadas com **date-fns** e ícones do **phosphor-react**.  
+Agora, toda a lógica e componentes são escritos em **TypeScript**, trazendo segurança de tipos e melhor manutenção.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias Utilizadas
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **React ^19.1.1**: biblioteca principal de UI.  
+- **TypeScript ~5.8.3**: tipagem estática e maior robustez.  
+- **Vite**: bundler e servidor de desenvolvimento rápido.  
+- **CSS Modules**: estilização com escopo local.  
+- **date-fns**: manipulação e formatação de datas.  
+- **phosphor-react**: biblioteca de ícones.  
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Funcionalidades
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Listagem de posts**: renderização dinâmica de posts a partir de um array de objetos.  
+2. **Componentização**: `Header`, `Sidebar`, `Post`, `Comment`, `Avatar`.  
+3. **Comentários**: formulário para adicionar e remover comentários.  
+4. **Interatividade**: botão de “like” em comentários.  
+5. **Formatação de data**: exibição amigável e relativa (ex.: “há 2h”).  
+6. **Segurança de tipos**: propriedades de componentes e dados validados pelo TypeScript.  
+
+## Como Executar o Projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/hallancma/mba-rockeseat-sirius-projetos-07-projeto-feed-ts
+   ```
+2. Acesse a pasta do projeto:
+   ```bash
+   cd projeto-feed-ts
+   ```
+3. Instale as dependências:
+   ```bash
+   npm install
+   ```
+4. Execute o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+   - O terminal mostrará a URL (ex.: `http://localhost:5173`).
+
+## Scripts Disponíveis
+
+```jsonc
+{
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "lint": "eslint .",
+  "preview": "vite preview"
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Exemplos de Uso
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Ao abrir a aplicação, é exibida uma lista de posts.  
+- Cada post contém informações do autor, data, conteúdo (parágrafos/links) e formulário de comentários.  
+- Botão “Curtir” disponível para cada comentário.  
+- Caso você passe propriedades erradas para os componentes, o **TypeScript** avisará em tempo de compilação.  
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Ver Projeto
+
+Para ver em funcionamento:  
+https://projetofeedts.hallanchristian.com.br
+
+---
