@@ -32,7 +32,7 @@ Agora, toda a lógica e componentes são escritos em **TypeScript**, trazendo se
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/projeto-feed-ts
+   git clone https://github.com/hallancma/mba-rockeseat-sirius-projetos-07-projeto-feed-ts
    ```
 2. Acesse a pasta do projeto:
    ```bash
